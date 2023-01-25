@@ -6,7 +6,7 @@ import tensorflow
 app = Flask(__name__)
 
 # Load your trained model from a file
-model = tf.keras.models.load_model("model_train2.h5")
+model = tf.keras.models.load_model("model/model_train2.h5")
 
 @app.route("/classify", methods=["POST"])
 def classify():
