@@ -1,31 +1,43 @@
 pipeline {
     agent any
 
- 
-
-    environment {
-        PATH = "C:\\Windows\\System32;C:\\Users\\lucas\\AppData\\Local\\Programs\\Python\\Python311;C:\\Program Files\\Docker\\Docker\\resources\\bin"
-    }
-
- 
-
     stages {
-        stage('Building') {
+        stage('StageBranch') {
             steps {
-                git branch: 'main', url: 'https://github.com/lbenyamin/CI-with-Github2.git'
+                //sh "git branch staging"
+                sh "git checkout staging"
+                sh "git pull origin main"
+                sh "git push origin staging"
             }
         }
-        stage('Testing') {
+        stage('Build') {
             steps {
-                bat 'python -m pip install Flask'
-                bat 'python test_main.py'
+                sh "pip3 install -r requirements.txt"
             }
         }
-        stage('Deploying') {
+        stage('Test') {
             steps {
-                bat 'docker build -t jenkins_app .'
-                bat 'docker run -d jenkins_app'
+                sh "python3 app.py "
             }
         }
+        stage('DockerBuild') {
+            steps {
+                sh "docker build -t docker-image-restful-ml ."
+            }
+        }
+        stage('DockerRun') {
+            steps {
+                sh "docker run -d "
+            }
+        }
+                
+        stage('DockerPush') {
+            steps{
+                sh "docker login --username=lucasben --password=Tatou5ZER!"
+                sh "docker tag docker-image-restful-ml docker push lucasben/docker-restful-ml-endpoint:docker-image-restful-ml"
+                sh "docker push lucasben/docker-restful-ml-endpoint:docker-image-restful-ml"
+            }
+        }
+
     }
 } 
