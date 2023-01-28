@@ -2,14 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('StageBranch') {
-            steps {
-                //sh "git branch staging"
-                sh "git checkout staging"
-                sh "git pull origin main"
-                sh "git push origin staging"
-            }
-        }
+
         stage('Build') {
             steps {
                 sh "pip3 install -r requirements.txt"
