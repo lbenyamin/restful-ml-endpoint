@@ -23,13 +23,12 @@ pipeline {
         }
         stage('DockerRun') {
             steps {
-                sh "docker run -d "
+                sh "docker run -d docker-image-restful-ml"
             }
         }
                 
         stage('DockerPush') {
             steps{
-                sh "docker login --username=lucasben --password=Tatou5ZER!"
                 sh "docker tag docker-image-restful-ml docker push lucasben/docker-restful-ml-endpoint:docker-image-restful-ml"
                 sh "docker push lucasben/docker-restful-ml-endpoint:docker-image-restful-ml"
             }
