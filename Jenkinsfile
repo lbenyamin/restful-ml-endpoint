@@ -5,7 +5,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat "C:/ProgramData/Anaconda3 conda.bat activate"
+                bat "CALL conda.bat activate env_name"
                 bat "C:/Users/lucas/AppData/Local/Programs/Python/Python39-32/Scripts/pip.exe install --upgrade pip"
                 bat "C:/Users/lucas/AppData/Local/Programs/Python/Python39-32/Scripts/pip.exe install --upgrade wheel"
                 bat "C:/Users/lucas/AppData/Local/Programs/Python/Python39-32/Scripts/pip.exe install --upgrade setuptools"
