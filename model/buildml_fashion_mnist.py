@@ -99,6 +99,11 @@ y_label[0]
 
 model.save('model_train2.h5')
 
+df1 = x_train2.loc[:1]
+df1.values.tolist()
+df1.to_json("C:/Users/lucas/Documents/GitHub/restful-ml-endpoint/data/test.json")
+
 """# For MNIST train 1"""
 
 model1 = model.fit(x_image1, x_label1, epochs=50)
+
