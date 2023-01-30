@@ -5,10 +5,10 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat "pip install --upgrade pip"
-                bat "pip install --upgrade wheel"
-                bat "pip install --upgrade setuptools"
-                bat "pip install -r requirements.txt"
+                bat "C:\Users\lucas\AppData\Local\Programs\Python\Python39-32\Scripts\pip.exe install --upgrade pip"
+                bat "C:\Users\lucas\AppData\Local\Programs\Python\Python39-32\Scripts\pip.exe install --upgrade wheel"
+                bat "C:\Users\lucas\AppData\Local\Programs\Python\Python39-32\Scripts\pip.exe install --upgrade setuptools"
+                bat "C:\Users\lucas\AppData\Local\Programs\Python\Python39-32\Scripts\pip.exe install -r requirements.txt"
             }
         }
         stage('Test') {
