@@ -15,13 +15,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-x_train1 = pd.read_csv('fashion-mnist-train-1.csv')
+x_train1 = pd.read_csv('C:/Users/lucas/Documents/GitHub/restful-ml-endpoint/data/fashion-mnist-train-1.csv')
 print(x_train1)
 
-x_train2 = pd.read_csv('fashion-mnist-train-2.csv')
+x_train2 = pd.read_csv('C:/Users/lucas/Documents/GitHub/restful-ml-endpoint/data/fashion-mnist-train-2.csv')
 print(x_train2)
 
-x_test = pd.read_csv('fashion-mnist_test.csv')
+x_test = pd.read_csv('C:/Users/lucas/Documents/GitHub/restful-ml-endpoint/data/fashion-mnist_test.csv')
 print(x_test)
 
 """## Preprocessing"""
@@ -47,9 +47,9 @@ x_image2 = x_train2.drop(columns='label').to_numpy()
 
 x_image1
 
-print(len(x1))
-print(len(y))
-print(len(x2))
+print(len(x_image1))
+print(len(y_test))
+print(len(x_image2))
 
 x_label1 = x_train1["label"]
 y_label = x_test["label"]
@@ -57,7 +57,7 @@ x_label2 = x_train2["label"]
 
 x_label1
 
-y_image.shape
+y_label.shape
 
 len(y_label)
 
@@ -96,12 +96,6 @@ predictions[0]
 np.argmax(predictions[0])
 
 y_label[0]
-
-predictions_single = probability_model.predict(img)
-
-print(predictions_single)
-
-np.argmax(predictions_single[0])
 
 model.save('model_train2.h5')
 

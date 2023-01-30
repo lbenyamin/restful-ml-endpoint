@@ -1,5 +1,6 @@
 import unittest
 import requests
+import tensorflow as tf
 from app import app
 
 class FlaskTestCase(unittest.TestCase):
