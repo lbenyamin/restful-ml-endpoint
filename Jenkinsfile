@@ -5,15 +5,15 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat "pip3 install --upgrade pip"
-                bat "pip3 install --upgrade wheel"
-                bat "pip3 install --upgrade setuptools"
-                bat "pip3 install -r requirements.txt"
+                bat "pip install --upgrade pip"
+                bat "pip install --upgrade wheel"
+                bat "pip install --upgrade setuptools"
+                bat "pip install -r requirements.txt"
             }
         }
         stage('Test') {
             steps {
-                bat "python3 app.py "
+                bat "python app.py "
             }
         }
         stage('DockerBuild') {
