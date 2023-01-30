@@ -14,6 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 bat "set PATH=%PATH%;C:/Users/lucas/AppData/Local/Programs/Python/Python310"
+                cmd "/C python app.py"
                 bat "python test_main.py "
             }
         }
