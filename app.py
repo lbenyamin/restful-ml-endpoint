@@ -5,8 +5,6 @@ import os
 
 app = Flask(__name__)
 
-model_path = "model/model_train.h5"
-
 @app.route("/")
 def home():
     return render_template("home.html")

@@ -78,7 +78,7 @@ model.compile(optimizer='adam',
 
 """# For MNIST train 2"""
 
-model2 = model.fit(x_image2, x_label2, epochs=50)
+model2 = model.fit(x_image2, x_label2, epochs=10)
 
 model.summary()
 
@@ -98,12 +98,15 @@ np.argmax(predictions[0])
 y_label[0]
 
 model.save('model_train2.h5')
-print(type(x_image2))
-df1 = arr.item(0)
+
+df1 = x_train2.loc[:1]
+df1.values.tolist()
+
 print(df1)
+
 df1.to_json("C:/Users/lucas/Documents/GitHub/restful-ml-endpoint/data/test.json")
 
 """# For MNIST train 1"""
 
-model1 = model.fit(x_image1, x_label1, epochs=50)
+model1 = model.fit(x_image1, x_label1, epochs=10)
 
