@@ -10,9 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat "where python"
-                bat '''set PATH=%PATH%;C:/ProgramData/Anaconda3 
-                python test_main.py '''
+                bat "python test_main.py"
             }
         }
         stage('DockerBuild') {
