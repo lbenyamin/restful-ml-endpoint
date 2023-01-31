@@ -5,7 +5,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat "C:/Users/lucas/AppData/Local/Programs/Python/Python310/Scripts/pip.exe install --upgrade pip"
+                bat "C:/Users/lucas/AppData/Local/Programs/Python/Python310/Scripts/pip.exe -m install --upgrade pip"
                 bat "C:/Users/lucas/AppData/Local/Programs/Python/Python310/Scripts/pip.exe install --upgrade wheel"
                 bat "C:/Users/lucas/AppData/Local/Programs/Python/Python310/Scripts/pip.exe install --upgrade setuptools"
                 bat "C:/Users/lucas/AppData/Local/Programs/Python/Python310/Scripts/pip.exe install -r requirements.txt"
@@ -14,7 +14,6 @@ pipeline {
         stage('Test') {
             steps {
                 bat "set PATH=%PATH%;C:/Users/lucas/AppData/Local/Programs/Python/Python310"
-                cmd "/C python app.py"
                 bat "python test_main.py "
             }
         }
