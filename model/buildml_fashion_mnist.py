@@ -98,8 +98,8 @@ np.argmax(predictions[0])
 y_label[0]
 
 model.save('model_train2.h5')
-
-df1 = x_train2.loc[:1]
+print(type(x_image2))
+df1 = arr.item(0)
 print(df1)
 df1.to_json("C:/Users/lucas/Documents/GitHub/restful-ml-endpoint/data/test.json")
 

@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat "python test_main.py"
+                bat "python3 test_main.py"
             }
         }
         stage('DockerBuild') {
