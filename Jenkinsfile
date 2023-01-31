@@ -5,9 +5,6 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat "C:/Users/lucas/AppData/Local/Programs/Python/Python310/Scripts/pip.exe install --upgrade pip"
-                bat "C:/Users/lucas/AppData/Local/Programs/Python/Python310/Scripts/pip.exe install --upgrade wheel"
-                bat "C:/Users/lucas/AppData/Local/Programs/Python/Python310/Scripts/pip.exe install --upgrade setuptools"
                 bat "C:/Users/lucas/AppData/Local/Programs/Python/Python310/Scripts/pip.exe install -r requirements.txt"
             }
         }
