@@ -10,8 +10,6 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat "python39 -m venv venv"
-                bat ".\\venv\\Scripts\\activate"
                 bat "python test_main.py"
             }
         }
